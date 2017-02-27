@@ -1,0 +1,30 @@
+{
+  "name": "ts-main",
+  "version": "1.0.0",
+  "description": "sample typescript project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jramoyo-siteminder/ts-main.git"
+  },
+  "author": "jan amoyo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jramoyo-siteminder/ts-main/issues"
+  },
+  "homepage": "https://github.com/jramoyo-siteminder/ts-main#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-typescript": "^3.1.5",
+    "merge2": "^1.0.3",
+    "run-sequence": "^1.2.2",
+    "typescript": "^2.2.1"
+  },
+  "dependencies": {
+    "ts-npm-module": "git+ssh://git@github.com/jramoyo-siteminder/ts-npm-module.git"
+  }
+}
