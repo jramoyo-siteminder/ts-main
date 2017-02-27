@@ -10,7 +10,8 @@
 * `gulp` (clean-dependencies + compile-dependencies + clean + compile)
 
 ### Run
-* `npm start`
+* `yarn start`
+* or `npm start`
 
 ### Including TypeScript Modules from GitHub
 * Module should include `./tsconfig.json`
