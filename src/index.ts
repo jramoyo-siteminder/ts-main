@@ -5,4 +5,4 @@ let jan = new Person('Jan', 'Amoyo');
 let work = new Place('SiteMinder', '88 Cumberland St, The Rocks NSW 2000');
 
 console.log(`Name: ${jan.getFullName()}`);
-console.log(`Work: ${work.name}, ${work.address}`);
+console.log(`Work: ${work.getFullAddress()}`);
