@@ -12,8 +12,8 @@ Sample NodeJS project using a TypeScript module published to GitHub
 * `gulp` (clean-dependencies + compile-dependencies + clean + compile)
 
 ### Run
-* `yarn start`
-* or `npm start`
+* `yarn run start`
+* or `npm run start`
 
 ### Including TypeScript Modules from GitHub
 * Module should include `./tsconfig.json`
