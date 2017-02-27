@@ -1,3 +1,5 @@
+Sample NodeJS project using a TypeScript module published to GitHub
+
 ### Install
 * `yarn install` 
 * or `npm install`
