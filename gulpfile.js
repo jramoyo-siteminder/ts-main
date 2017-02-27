@@ -9,10 +9,13 @@ function moduleDir(module) {
     return './node_modules/' + module;
 }
 
+// Assumes module transpiles to `dist` directory
 function cleanDependency(module) {
     return gulp.src(moduleDir(module) + '/dist/', { read: false }).pipe(clean());
 }
 
+// Assumes module source in `src` directory
+// Assumes module transpiles to `dist` directory
 function compileDependency(module) {
     var tsProject = ts.createProject(moduleDir(module) + '/tsconfig.json');
     var tsResult = gulp.src(moduleDir(module) + '/src/**/*.ts').pipe(tsProject());
@@ -25,16 +28,16 @@ function compileDependency(module) {
 gulp.task('clean-dependencies', function () {
     return merge([
         cleanDependency('ts-npm-module'),
-        // cleanDependency('other-module-1'),
-        // cleanDependency('other-module-2'),
+        // cleanDependency('other-ts-module-1'),
+        // cleanDependency('other-ts-module-2'),
     ]);
 });
 
 gulp.task('compile-dependencies', function () {
     return merge([
         compileDependency('ts-npm-module'),
-        // compileDependency('other-module-1'),
-        // compileDependency('other-module-2'),
+        // compileDependency('other-ts-module-1'),
+        // compileDependency('other-ts-module-2'),
     ]);
 });
 

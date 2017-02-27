@@ -2,8 +2,10 @@
   "name": "ts-main",
   "version": "1.0.0",
   "description": "sample typescript project",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
+    "start": "node dist/index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
