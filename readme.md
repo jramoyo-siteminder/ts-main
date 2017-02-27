@@ -13,26 +13,27 @@
 * `npm start`
 
 ### Including TypeScript Modules from GitHub
+* Module should include `./tsconfig.json`
+* Module source should be in `./src`
+* Module transpiles to `./dist`
+
 ```
 $ yarn add git+ssh://git@github.com/<account>/<repository>.git#branch --save
 ```
-
+or
 ```
-gulp.task('clean-dependencies', function () {
-    return merge([
-        cleanDependency('ts-npm-module'),
-        cleanDependency('my-ts-module-1'), // add ts modules here
-        cleanDependency('my-ts-module-2'), // add ts modules here
-    ]);
-});
+$ npm install git+ssh://git@github.com/<account>/<repository>.git#branch --save
 ```
 
 ```
-gulp.task('compile-dependencies', function () {
-    return merge([
-        compileDependency('ts-npm-module'),
-        compileDependency('my-ts-module-1'), // add ts modules here
-        compileDependency('my-ts-module-2'), // add ts modules here
-    ]);
-});
+// gulpfile.js
+var tsModules = [
+    'ts-npm-module',
+    'my-ts-module-1', // add ts module here
+    'my-ts-module-2', // add ts module here
+];
+```
+
+```
+$ gulp build
 ```

@@ -2,20 +2,24 @@ var gulp = require('gulp');
 var clean = require('gulp-clean');
 var ts = require('gulp-typescript');
 
+var _ = require('lodash');
 var merge = require('merge2');
 var runSequence = require('run-sequence');
+
+var tsModules = [
+    'ts-npm-module',
+    // 'other-ts-module-1',
+    // 'other-ts-module-2',
+];
 
 function moduleDir(module) {
     return './node_modules/' + module;
 }
 
-// Assumes module transpiles to `dist` directory
 function cleanDependency(module) {
     return gulp.src(moduleDir(module) + '/dist/', { read: false }).pipe(clean());
 }
 
-// Assumes module source in `src` directory
-// Assumes module transpiles to `dist` directory
 function compileDependency(module) {
     var tsProject = ts.createProject(moduleDir(module) + '/tsconfig.json');
     var tsResult = gulp.src(moduleDir(module) + '/src/**/*.ts').pipe(tsProject());
@@ -26,19 +30,15 @@ function compileDependency(module) {
 }
 
 gulp.task('clean-dependencies', function () {
-    return merge([
-        cleanDependency('ts-npm-module'),
-        // cleanDependency('other-ts-module-1'),
-        // cleanDependency('other-ts-module-2'),
-    ]);
+    return merge(_.map(tsModules, function (module) {
+        return cleanDependency(module);
+    }));
 });
 
 gulp.task('compile-dependencies', function () {
-    return merge([
-        compileDependency('ts-npm-module'),
-        // compileDependency('other-ts-module-1'),
-        // compileDependency('other-ts-module-2'),
-    ]);
+    return merge(_.map(tsModules, function (module) {
+        return compileDependency(module);
+    }));
 });
 
 gulp.task('clean', function () {

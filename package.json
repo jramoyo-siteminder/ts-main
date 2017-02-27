@@ -28,6 +28,7 @@
     "typescript": "^2.2.1"
   },
   "dependencies": {
+    "lodash": "^4.17.4",
     "ts-npm-module": "git+ssh://git@github.com/jramoyo-siteminder/ts-npm-module.git"
   }
 }
