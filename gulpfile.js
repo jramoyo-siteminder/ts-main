@@ -29,13 +29,13 @@ function compileDependency(module) {
     ]);
 }
 
-gulp.task('clean-dependencies', function () {
+gulp.task('clean:dependencies', function () {
     return merge(_.map(tsModules, function (module) {
         return cleanDependency(module);
     }));
 });
 
-gulp.task('compile-dependencies', function () {
+gulp.task('compile:dependencies', function () {
     return merge(_.map(tsModules, function (module) {
         return compileDependency(module);
     }));
@@ -56,8 +56,8 @@ gulp.task('compile', function () {
 
 gulp.task('build', function (callback) {
     runSequence(
-        ['clean-dependencies', 'clean'],
-        'compile-dependencies',
+        ['clean:dependencies', 'clean'],
+        'compile:dependencies',
         'compile',
         callback);
 });

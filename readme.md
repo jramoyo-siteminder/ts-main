@@ -3,8 +3,8 @@
 * or `npm install`
 
 ### Build
-* `gulp clean-dependencies`
-* `gulp compile-dependencies`
+* `gulp clean:dependencies`
+* `gulp compile:dependencies`
 * `gulp clean`
 * `gulp compile`
 * `gulp` (clean-dependencies + compile-dependencies + clean + compile)
