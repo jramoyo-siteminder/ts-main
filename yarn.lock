@@ -1526,7 +1526,7 @@ trim-newlines@^1.0.0:
 
 "ts-npm-module@git+ssh://git@github.com/jramoyo-siteminder/ts-npm-module.git":
   version "1.0.0"
-  resolved "git+ssh://git@github.com/jramoyo-siteminder/ts-npm-module.git#1d68892e24f6a3000f33137a9512a3644f44beb1"
+  resolved "git+ssh://git@github.com/jramoyo-siteminder/ts-npm-module.git#e508f53cad032140c3e6113a9cd320ab02e58aed"
 
 typescript@^2.2.1:
   version "2.2.1"
