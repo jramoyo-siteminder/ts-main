@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/jramoyo-siteminder/ts-main#readme",
   "devDependencies": {
+    "@types/node": "^7.0.5",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "gulp-typescript": "^3.1.5",
