@@ -40,3 +40,7 @@ var tsModules = [
 ```
 $ gulp build
 ```
+
+### Limitations
+* Docker cannot download from private GitHub repositories
+* `yarn install --production` removes generated code
