@@ -6,7 +6,7 @@ Sample NodeJS project using a TypeScript module published to GitHub
 
 ### Build
 * `gulp clean`
-* `gulp install`
+* `gulp stage`
 * `gulp compile`
 * `gulp build`
 * `gulp` (build)

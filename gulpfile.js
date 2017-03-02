@@ -20,13 +20,13 @@ gulp.task('clean', function () {
     return gulp.src(['dist/', 'build/'], { read: false }).pipe(clean());
 });
 
-gulp.task('install', ['clean'], function () {
+gulp.task('stage', ['clean'], function () {
     return gulp.src(['./package.json', './yarn.lock'])
         .pipe(gulp.dest('./build/stage'))
         .pipe(yarn({ production: true }));
 });
 
-gulp.task('compile', ['install'], function () {
+gulp.task('compile', ['stage'], function () {
     var tsProject = ts.createProject('tsconfig.json');
     var tsResult = gulp.src('src/**/*.ts').pipe(tsProject());
     return merge([
