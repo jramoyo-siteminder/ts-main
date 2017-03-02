@@ -6,9 +6,15 @@ Sample NodeJS project using a TypeScript module published to GitHub
 
 ### Build
 * `gulp clean`
+* `gulp install`
 * `gulp compile`
-* `gulp` (clean + compile)
+* `gulp build`
+* `gulp` (build)
 
 ### Run
 * `yarn run main`
 * or `npm run main`
+
+### Docker
+* `gulp && docker build -t ts-main:latest .`
+* `docker run -it ts-main`
